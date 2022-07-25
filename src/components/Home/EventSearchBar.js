@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchIconUnstyled from '../../../icons/such-icon.svg'
+import SearchIconUnstyled from '../../../icons/search-icon.svg'
 
 const SearchIcon = styled(SearchIconUnstyled)`
     width: 1.25rem;
