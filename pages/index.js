@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,6 +24,7 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+        <button onClick={() => router.push('/homescreen')} style={{background: "red", color: "#fff"}}>Homescreen</button>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
