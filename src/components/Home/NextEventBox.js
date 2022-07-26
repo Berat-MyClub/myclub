@@ -18,6 +18,7 @@ const Box = styled.div`
     background-repeat: no-repeat;
     box-shadow: inset 0px -100px 50px #000000AF;
     position: relative;
+    margin-bottom: .75rem;
 `
 
 export default function NextEventBox() {

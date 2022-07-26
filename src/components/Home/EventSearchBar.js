@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import SearchIconUnstyled from '../../../icons/magnifying-glass-solid.svg'
+import { MdSearch } from "react-icons/md";
+// import SearchIconUnstyled from '../../../icons/magnifying-glass-solid.svg'
 
-const SearchIcon = styled(SearchIconUnstyled)`
-    width: 1.25rem;
-    height: 1.25rem;
-    fill: #fff;
-`
+// const SearchIcon = styled(SearchIconUnstyled)`
+//     width: 1rem;
+//     height: 1rem;
+//     fill: #fff;
+// `
 
 const Bar = styled.div`
-    padding: 1rem;
+    padding: .75rem 1rem;
     border-radius: 7px;
     background-color: #1B3031;
     display: flex;
@@ -27,7 +28,7 @@ const SearchInput = styled.input`
 
     ::placeholder {
         color: #A6A6A6;
-        font-size: 1rem;
+        font-size: .875rem;
         font-family: 'Poppins';
     }
 `
@@ -35,7 +36,7 @@ const SearchInput = styled.input`
 export default function EventSearchBar() {
     return(
         <Bar>
-            <SearchIcon/>
+            <MdSearch style={{width:"1.5rem", height:"1.5rem", fill:"#fff"}}/>
             <SearchInput placeholder="Search for Events, Clubs, Friends"/>
         </Bar>
     )
