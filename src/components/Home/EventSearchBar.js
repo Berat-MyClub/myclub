@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchIconUnstyled from '../../../icons/search-icon.svg'
+import SearchIconUnstyled from '../../../icons/magnifying-glass-solid.svg'
 
 const SearchIcon = styled(SearchIconUnstyled)`
     width: 1.25rem;
@@ -12,7 +12,7 @@ const Bar = styled.div`
     border-radius: 7px;
     background-color: #1B3031;
     display: flex;
-
+    align-items: center;
 `
 
 const SearchInput = styled.input`
