@@ -5,6 +5,7 @@ import EventSearchBar from "../src/components/Home/EventSearchBar";
 import NextEventBox from "../src/components/Home/NextEventBox";
 import MyClubLogoUnstyled from "../icons/logo-myclub.svg";
 import { MdInfoOutline } from "react-icons/md";
+import HotListSlider from "../src/components/Home/HotListSlider";
 // import InfoIconUnstyled from "../icons/info-icon.svg";
 
 
@@ -33,6 +34,7 @@ export default function Homescreen() {
         </Row>
         <MdInfoOutline style={{width: "1.5rem", height:"1.5rem", fill:"#fff"}} />
       </Row>
+      <HotListSlider/>
     </Wrapper>
   );
 }

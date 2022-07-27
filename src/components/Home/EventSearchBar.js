@@ -18,7 +18,6 @@ const Bar = styled.div`
 
 const SearchInput = styled.input`
     width: 100%;
-    /* padding: 0 .75rem; */
     margin-left: .75rem;
     background: transparent;
     border: none;
