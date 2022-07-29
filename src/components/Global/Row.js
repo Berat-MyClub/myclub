@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export default styled.div`
     width: 100%;
     justify-content: ${props => props.justifyContent ? props.justifyContent : "space-between"};
-    display: flex;
+    flex-direction: ${props => props.flexDirection && props.flexDirection};
+    display: ${props => props.display ? props.display : "flex"};
     align-items: center;
 `

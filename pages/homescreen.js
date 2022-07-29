@@ -6,6 +6,9 @@ import NextEventBox from "../src/components/Home/NextEventBox";
 import MyClubLogoUnstyled from "../icons/logo-myclub.svg";
 import { MdInfoOutline } from "react-icons/md";
 import HotListSlider from "../src/components/Home/HotListSlider";
+import { useState } from "react";
+import InfoButton from "../src/components/Global/InfoButton";
+import SearchByGenre from "../src/components/Home/SerchByGenre";
 // import InfoIconUnstyled from "../icons/info-icon.svg";
 
 
@@ -22,19 +25,23 @@ const MyClubLogo = styled(MyClubLogoUnstyled)`
 // `;
 
 export default function Homescreen() {
+
+    const [infoText, setInfoText] = useState(false);
+
   return (
     <Wrapper>
       <EventSearchBar />
       <h1>Your Next Event</h1>
       <NextEventBox />
-      <Row>
+      <Row style={{position:"relative"}}>
         <Row justifyContent="none">
-          {/* <MyClubLogo /> */}
           <h1>MyClub Hot List</h1>
         </Row>
-        <MdInfoOutline style={{width: "1.5rem", height:"1.5rem", fill:"#fff"}} />
+        <InfoButton/>
       </Row>
       <HotListSlider/>
+      <h1>Explore by Categorys</h1>
+      <SearchByGenre/>
     </Wrapper>
   );
 }

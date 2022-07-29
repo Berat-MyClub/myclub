@@ -1,16 +1,20 @@
 import styled from "styled-components";
-import RightArrowUnstyled from '../../../icons/right-arrow-icon.svg'
+import { MdOutlineEast as RightArrowUnstyled } from "react-icons/md";
+
 
 const RightArrow = styled(RightArrowUnstyled)`
     fill: #fff;
     position: absolute;
-    right: 5px;
-    bottom: 0;
+    right: 10px;
+    bottom: 5px;
+    width: 2rem;
+    height: 2rem;
 `
 
 const Box = styled.div`
     width: 100%;
     max-height: 23vh;
+    min-height: 23vh;
     height: 100%;
     background-image: url('/FinestEventImage.jpeg');
     background-size: contain;

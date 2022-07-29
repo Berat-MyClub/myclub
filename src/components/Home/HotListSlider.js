@@ -29,6 +29,7 @@ const SongBox = styled.div`
   border-radius: 7px 0 7px 0;
   box-shadow: inset 0px -60px 50px #000000af;
   position: relative;
+  margin-bottom: .75rem;
 `;
 
 export default function HotListSlider() {
