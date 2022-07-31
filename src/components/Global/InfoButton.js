@@ -8,7 +8,11 @@ const Box = styled.div`
   align-items: center;
 `;
 
-const MdInfoOutline = styled(MdInfoOutlineUnstyled)``;
+const MdInfoOutline = styled(MdInfoOutlineUnstyled)`
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #a6a6a6;
+`;
 
 const InfoText = styled.p`
   display: none;
@@ -25,19 +29,16 @@ const InfoText = styled.p`
 `;
 
 export default function InfoButton() {
-
   function handleInfoText() {
-
-   const text = document.querySelector('infotext');
+    const text = document.querySelector("infotext");
 
     setInfoText(true);
     setTimeout(() => {
-        document.getElementById("infotext").style.display = "none"
+      document.getElementById("infotext").style.display = "none";
     }, 4000);
   }
 
   const [infoText, setInfoText] = useState(false);
-
 
   return (
     <Box onClick={() => handleInfoText()}>
@@ -45,9 +46,7 @@ export default function InfoButton() {
       <InfoText id="infotext" className="infotext" infoText={infoText}>
         Most Likes Songs
       </InfoText>
-      <MdInfoOutline
-        style={{ width: "1.5rem", height: "1.5rem", fill: "#fff" }}
-      />
+      <MdInfoOutline />
     </Box>
   );
 }
