@@ -17,8 +17,8 @@ const Box = styled.div`
     min-height: 23vh;
     height: 100%;
     background-image: url('/FinestEventImage.jpeg');
-    background-size: contain;
-    background-position: cover;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     box-shadow: inset 0px -100px 50px #000000AF;
     position: relative;
