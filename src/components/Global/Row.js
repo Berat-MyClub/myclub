@@ -6,4 +6,5 @@ export default styled.div`
     flex-direction: ${props => props.flexDirection && props.flexDirection};
     display: ${props => props.display ? props.display : "flex"};
     align-items: center;
+    margin: ${props => props.margin && props.margin}
 `

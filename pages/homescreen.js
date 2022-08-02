@@ -12,6 +12,7 @@ import SearchByGenre from "../src/components/Home/SerchByGenre";
 import P from "../src/components/Fonts/P";
 import ReccomendedEvents from "../src/components/Home/ReccomendedEvents";
 import VoteOnNewestSongs from "../src/components/Home/VoteOnNewestSongs";
+import AppBar from "../src/components/Global/AppBar";
 // import InfoIconUnstyled from "../icons/info-icon.svg";
 
 const MyClubLogo = styled(MyClubLogoUnstyled)`
@@ -50,6 +51,7 @@ export default function Homescreen() {
       <ReccomendedEvents/>
       <h1>Vote on newest Songs</h1>
       <VoteOnNewestSongs/>
+      {/* <AppBar/> */}
     </Wrapper>
   );
 }

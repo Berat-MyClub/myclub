@@ -5,6 +5,7 @@ import { MdOutlineChevronRight as ArrowRightUnstyled } from "react-icons/md";
 import { FaRegHeart as HeartUnstyled } from "react-icons/fa";
 // import { FaHeart as FilledHeartUnstyled } from "react-icons/fa";
 import { FaMapPin as PinUnstyled } from "react-icons/fa";
+import EventGenreTag from "../Global/EventGenreTag";
 // import { useEffect, useState } from "react";
 
 const Pin = styled(PinUnstyled)`
@@ -75,13 +76,13 @@ const EventInfoBox = styled.div`
   padding-left: 1rem;
 `;
 
-const EventGenreTag = styled.div`
-  width: auto;
-  padding: 0.25rem;
-  background-color: #1b3031;
-  border-radius: 4px;
-  margin-right: .5rem;
-`;
+// const EventGenreTag = styled.div`
+//   width: auto;
+//   padding: 0.25rem;
+//   background-color: #1b3031;
+//   border-radius: 4px;
+//   margin-right: .5rem;
+// `;
 
 // const handleLike = () => {
 //   const [like, setLike] = useState(false);
@@ -105,9 +106,9 @@ export default function ReccomendedEvents() {
           </Row>
           <Row></Row>
           <Row>
-            <EventGenreTag><P marginBottom="0" marginTop="0">HipHoP</P></EventGenreTag>
-            <EventGenreTag><P marginBottom="0" marginTop="0">Dancehall</P></EventGenreTag>
-            <EventGenreTag><P marginBottom="0" marginTop="0">RnB</P></EventGenreTag>
+            <EventGenreTag tag="HipHop"/>
+            <EventGenreTag tag="RnB"/>
+            <EventGenreTag tag="Deutsch"/>
           </Row>
           <Row justifyContent="unset">
             <Pin/>

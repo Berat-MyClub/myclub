@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MdOutlineEast as RightArrowUnstyled } from "react-icons/md";
+import { useRouter } from "next/router";
 
 
 const RightArrow = styled(RightArrowUnstyled)`
@@ -26,8 +27,11 @@ const Box = styled.div`
 `
 
 export default function NextEventBox() {
+
+    const router = useRouter();
+
     return(
-        <Box>
+        <Box onClick={() => router.push('/eventdetailed')}>
             <RightArrow/>
         </Box>
     )
