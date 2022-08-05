@@ -7,11 +7,13 @@ import Row from "../src/components/Global/Row";
 import Wrapper from "../src/components/Global/Wrapper";
 import { MdOutlineChevronRight as ArrowRightUnstyled } from "react-icons/md";
 import EventInfoBlock from "../src/components/DetailedEvent/EventInfoBlock";
+import H2 from "../src/components/Fonts/H2";
+import EventAttendees from "../src/components/DetailedEvent/EventAttendees";
 
 const ArrowRight = styled(ArrowRightUnstyled)`
   margin-left: 0.25rem;
   fill: #2d97ac;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 `;
 
 const OutterDiv = styled.div``;
@@ -38,7 +40,15 @@ export default function eventdetailed() {
           <EventGenreTag style="outlined" tag="Dancehall" />
           <EventGenreTag style="outlined" tag="Afro" />
         </Row>
-        <EventInfoBlock/>
+        <EventInfoBlock />
+        <H2 fontWeight="600">Das solltest du wissen...</H2>
+        <span>
+          Am 21.05 (Samstag) ist es endlich mal wieder soweit… LADIES FIRST
+          steht vor der Tür. An so einer besonderen Party lassen wir nur einen
+          wahren Meister an die Plattenteller. Als echte Liebhaber der Musik,
+          weiß er genau, was Frauen… mehr
+        </span>
+        <EventAttendees/>
       </Wrapper>
     </OutterDiv>
   );

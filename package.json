@@ -13,9 +13,11 @@
     "firebase": "^9.9.1",
     "firebase-admin": "^11.0.0",
     "next": "12.2.3",
+    "next-auth": "^4.10.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
+    "spotify-web-api-node": "^5.0.2",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
