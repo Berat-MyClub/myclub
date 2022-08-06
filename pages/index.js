@@ -12,10 +12,8 @@ import SearchByGenre from "../src/components/Home/SerchByGenre";
 import P from "../src/components/Fonts/P";
 import ReccomendedEvents from "../src/components/Home/ReccomendedEvents";
 import VoteOnNewestSongs from "../src/components/Home/VoteOnNewestSongs";
-import AppBar from "../src/components/Global/AppBar";
+// import AppBar from "../src/components/Global/AppBar";
 import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import Loader from "../src/components/Global/Loader";
 
 const MyClubLogo = styled(MyClubLogoUnstyled)`
   width: 1.5rem;
@@ -31,14 +29,14 @@ const MyClubLogo = styled(MyClubLogoUnstyled)`
 
 export default function Homescreen() {
   // const [infoText, setInfoText] = useState(false);
-  const router = useRouter();
-  const { status, data: session } = useSession();
+  // const router = useRouter();
+  // const { status, data: session } = useSession();
 
-  useEffect(() => {
-    if(session === null) {
-      router.push('/login')
-    }
-  });
+  // useEffect(() => {
+  //   if(session === null) {
+  //     router.push('/login')
+  //   }
+  // });
 
   return (
     <Wrapper>
