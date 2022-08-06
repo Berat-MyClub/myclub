@@ -35,16 +35,10 @@ export default function Homescreen() {
   const { status, data: session } = useSession();
 
   useEffect(() => {
-    if(!session) {
+    if(session === null) {
       router.push('/login')
     }
   },[session]);
-
-  if(status === "loading") {
-    return <Loader/>;
-  }
-
-  console.log("sessio", session);
 
   return (
     <Wrapper>
