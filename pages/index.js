@@ -38,7 +38,7 @@ export default function Homescreen() {
     if(session === null) {
       router.push('/login')
     }
-  },[session]);
+  });
 
   return (
     <Wrapper>
