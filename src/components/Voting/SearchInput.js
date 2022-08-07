@@ -34,7 +34,7 @@ const Result = styled.div`
   padding: 1rem 0;
 `;
 
-export default function searchInput({ spotifyApi }) {
+export default function SearchInput({ spotifyApi }) {
   const { data: session } = useSession();
   const { accessToken } = session || {};
   const [search, setSearch] = useState("");

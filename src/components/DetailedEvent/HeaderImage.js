@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ButtonText from "../Fonts/ButtonText";
 import BackButton from "../Global/BackButton";
 import { MdKeyboardArrowRight as ArrowRighttUnstyled } from "react-icons/md";
+import { useRouter } from "next/router";
 
 const ArrowRight = styled(ArrowRighttUnstyled)`
   width: 1.5rem;
@@ -40,10 +41,13 @@ const VoteTagInner = styled.div`
 `;
 
 export default function HeaderImage() {
+
+  const router = useRouter();
+  
   return (
     <Box>
       <BackButton />
-      <VoteTagOutter>
+      <VoteTagOutter onClick={() => router.push("/searchSong")}>
         <VoteTagInner>
           <ButtonText style={{margin:"0"}}>Vote</ButtonText>
           <ArrowRight />
