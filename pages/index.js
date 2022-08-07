@@ -14,33 +14,42 @@ import ReccomendedEvents from "../src/components/Home/ReccomendedEvents";
 import VoteOnNewestSongs from "../src/components/Home/VoteOnNewestSongs";
 // import AppBar from "../src/components/Global/AppBar";
 import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import Loader from "../src/components/Global/Loader";
+import spotifyApi from "../lib/spotify";
 
 const MyClubLogo = styled(MyClubLogoUnstyled)`
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.5rem;
 `;
-
-// const InfoIcon = styled(InfoIconUnstyled)`
-//   fill: #ffffff;
-//   width: 1.5rem;
-//   height: 1.5rem;
-// `;
-
 export default function Homescreen() {
-  // const [infoText, setInfoText] = useState(false);
-  // const router = useRouter();
-  // const { status, data: session } = useSession();
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [newReleases, setNewReleases] = useState([]);
+
+  const router = useRouter();
+  const { status, data: session } = useSession({
+    onUnauthenticated() {
+      router.push("/auth/login");
+    },
+  });
+
+  if (status === "loading") {
+    return <Loader />;
+  }
+  // const { accessToken } = session;
 
   // useEffect(() => {
-  //   if(session === null) {
-  //     router.push('/login')
-  //   }
-  // });
+  //   if (!spotifyApi) return;
+  //   spotifyApi.setAccessToken(accessToken);
+  // }, [accessToken]);
+
+  // console.log;
 
   return (
     <Wrapper>
-      <EventSearchBar />
+      <EventSearchBar search={search} setSearch={setSearch} />
       <button onClick={() => signOut()}>Log Out</button>
       <h1>Your Next Event</h1>
       <NextEventBox />

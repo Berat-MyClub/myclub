@@ -1,10 +1,11 @@
 import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
+import spotifyApi from "../lib/spotify";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <Component spotifyApi={spotifyApi} {...pageProps} />
     </SessionProvider>
   );
 }
