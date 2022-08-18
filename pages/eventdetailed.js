@@ -18,7 +18,8 @@ const ArrowRight = styled(ArrowRightUnstyled)`
 
 const OutterDiv = styled.div``;
 
-export default function eventdetailed() {
+export default function eventdetailed({ data }) {
+
   return (
     <OutterDiv>
       <HeaderImage />
@@ -48,7 +49,7 @@ export default function eventdetailed() {
           wahren Meister an die Plattenteller. Als echte Liebhaber der Musik,
           weiß er genau, was Frauen… mehr
         </span>
-        <EventAttendees/>
+        <EventAttendees />
       </Wrapper>
     </OutterDiv>
   );

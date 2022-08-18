@@ -26,9 +26,9 @@ const Box = styled.div`
 `;
 
 const Genre = styled.div`
-  min-width: 5rem;
-  max-width: 5rem;
-  height: 4rem;
+  min-width: 4rem;
+  max-width: 4rem;
+  height: 3rem;
   background-color: #1b3031;
   margin-right: 1rem;
   border-radius: 5px;
@@ -46,9 +46,9 @@ const Genre = styled.div`
   ${(props) =>
     props.active &&
     `
-    min-width: 6rem;
-    max-width: 6rem;
-    height: 5rem;
+    min-width: 5rem;
+    max-width: 5rem;
+    height: 4rem;
     transform: translateY(-8px);
     font-size: 1rem;
     font-weight: 500;
@@ -71,7 +71,7 @@ const ResultEvent = styled.div`
   float: left;
   width: 15%;
   height: 0;
-  padding: 15%;
+  padding: 12%;
   border: 1px solid black;
   background-image: url(${(props) => props.url && props.url});
   background-size: cover;
@@ -139,7 +139,7 @@ export default function SearchByGenre() {
           <EventInfoBox>
             <EventTitle>Urban Fire</EventTitle>
             <Row justifyContent="unset">
-              <P marginBottom="0" marginTop="0" color="#2d97ac">
+              <P margin='0' color="#2d97ac">
                 E-Lounge Club
               </P>
               <ArrowRight />
@@ -155,7 +155,7 @@ export default function SearchByGenre() {
           <EventInfoBox>
             <EventTitle>La Bomba</EventTitle>
             <Row justifyContent="unset">
-              <P marginBottom="0" marginTop="0" color="#2d97ac">
+              <P margin='0' color="#2d97ac">
                 GUM Eventhalle
               </P>
               <ArrowRight />
