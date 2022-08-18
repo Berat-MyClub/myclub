@@ -14,8 +14,8 @@ import { useEffect } from "react";
 const Drawer = styled(DrawerUnstyled)`
   /* transition-duration: 50ms; */
 
-  .css-9emuhu-MuiPaper-root-MuiDrawer-paper {
-    height: 100%;
+  .MuiDrawer-paperAnchorBottom {
+    height: 100vh;
     background: linear-gradient(#002727, #031a1a, #070808);
   }
 `;
@@ -64,17 +64,17 @@ export default function Header({ data }) {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
   const [events, setEvents] = useState([]);
 
-  useEffect(() => {
-    async function getEvents() {
-      const res = await fetch(`/api/events`);
-      const data = await res.json();
+  // useEffect(() => {
+  //   async function getEvents() {
+  //     const res = await fetch(`/api/events`);
+  //     const data = await res.json();
 
-      setEvents(data);
-    }
-    getEvents();
-  });
+  //     setEvents(data);
+  //   }
+  //   getEvents();
+  // });
 
-//   console.log(events);
+  //   console.log(events);
 
   return (
     <Box>
@@ -133,9 +133,8 @@ export default function Header({ data }) {
           </Wrapper>
         </DrawerHeader>
         <Wrapper>
-          {events.map((event) => {
-            return <ReccomendedEvents key={event.id} events={events} setEvents={setEvents}/>;
-          })}
+          <ReccomendedEvents events={events} setEvents={setEvents} />
+          <ReccomendedEvents events={events} setEvents={setEvents} />
         </Wrapper>
       </Drawer>
     </Box>
