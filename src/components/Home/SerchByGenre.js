@@ -2,27 +2,13 @@ import { useState } from "react";
 import styled from "styled-components";
 import P from "../Fonts/P";
 import Row from "../Global/Row";
-import { MdOutlineCalendarToday as CalendarUnstyled } from "react-icons/md";
-import { MdOutlineChevronRight as ArrowRightUnstyled } from "react-icons/md";
-
-
-const ArrowRight = styled(ArrowRightUnstyled)`
-  margin-left: 0.25rem;
-  fill: #2d97ac;
-`;
-
-const Calendar = styled(CalendarUnstyled)`
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: #a6a6a6;
-  margin-right: 0.5rem;
-`;
+import SearchByGenreEvent from "./SearchByGenreEvent";
 
 const Box = styled.div`
   display: flex;
   overflow-x: scroll;
-  margin-bottom: .8rem;
-  padding-top: .8375rem;
+  margin-bottom: 0.8rem;
+  padding-top: 0.8375rem;
 `;
 
 const Genre = styled.div`
@@ -53,35 +39,6 @@ const Genre = styled.div`
     font-size: 1rem;
     font-weight: 500;
   `}
-`;
-
-const ResultContainer = styled.div`
-  width: 100%;
-  display: flex;
-  margin-bottom: 1rem;
-`;
-
-const EventTitle = styled.h2`
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 600;
-`;
-
-const ResultEvent = styled.div`
-  float: left;
-  width: 15%;
-  height: 0;
-  padding: 12%;
-  border: 1px solid black;
-  background-image: url(${(props) => props.url && props.url});
-  background-size: cover;
-  background-position: center;
-  border-radius: 7px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-`;
-
-const EventInfoBox = styled.div`
-  padding-left: 1rem;
 `;
 
 export default function SearchByGenre() {
@@ -134,38 +91,8 @@ export default function SearchByGenre() {
         </Genre>
       </Box>
       <Row flexDirection="column">
-        <ResultContainer>
-          <ResultEvent url={"/urbanfire.jpeg"} />
-          <EventInfoBox>
-            <EventTitle>Urban Fire</EventTitle>
-            <Row justifyContent="unset">
-              <P margin='0' color="#2d97ac">
-                E-Lounge Club
-              </P>
-              <ArrowRight />
-            </Row>
-            <Row>
-              <Calendar />
-              <P>SA 23.07, 23:00 Uhr</P>
-            </Row>
-          </EventInfoBox>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultEvent url={"/labomba.jpeg"} />
-          <EventInfoBox>
-            <EventTitle>La Bomba</EventTitle>
-            <Row justifyContent="unset">
-              <P margin='0' color="#2d97ac">
-                GUM Eventhalle
-              </P>
-              <ArrowRight />
-            </Row>
-            <Row>
-              <Calendar />
-              <P>SA 23.07, 23:00 Uhr</P>
-            </Row>
-          </EventInfoBox>
-        </ResultContainer>
+        <SearchByGenreEvent url={"/labomba.jpeg"} />
+        <SearchByGenreEvent url={"/urbanfire.jpeg"} />
       </Row>
     </>
   );

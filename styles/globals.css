@@ -43,3 +43,9 @@ span {
   font-size: .875rem;
   color: #fff;
 }
+
+a {
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: underline;
+}

@@ -41,7 +41,7 @@ export default function Homescreen() {
       <HotListSlider />
       <Row>
         <h1 style={{ marginBottom: "0" }}>Explore by Categorys</h1>
-        <P marginBottom="0" color="#a6a6a6">
+        <P style={{marginBottom:'0'}} color="#a6a6a6">
           See All
         </P>
       </Row>

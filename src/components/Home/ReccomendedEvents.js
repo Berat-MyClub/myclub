@@ -1,22 +1,11 @@
 import styled from "styled-components";
 import P from "../Fonts/P";
 import Row from "../Global/Row";
-import { MdOutlineChevronRight as ArrowRightUnstyled } from "react-icons/md";
+import { MdOutlineChevronRight as ArrowRightUnstyled, MdOutlineMoreHoriz as DotsUnstyled } from "react-icons/md";
 import { FaRegHeart as HeartUnstyled } from "react-icons/fa";
-// import { FaHeart as FilledHeartUnstyled } from "react-icons/fa";
-import { FaMapPin as PinUnstyled } from "react-icons/fa";
 import EventGenreTag from "../Global/EventGenreTag";
-import { useState } from "react";
-// import { useEffect, useState } from "react";
 
-const Pin = styled(PinUnstyled)`
-  width: 1rem;
-  height: 1rem;
-  fill: #a6a6a6;
-  margin-right: 0.25rem;
-  margin-top: 0.75rem;
-`;
-const Heart = styled(HeartUnstyled)`
+const Dots = styled(DotsUnstyled)`
   width: 1.25rem;
   height: 1.25rem;
   fill: #fff;
@@ -76,26 +65,27 @@ export default function ReccomendedEvents({
       <ResultContainer>
         <ResultEvent url={"/urbanfire.jpeg"} />
         <EventInfoBox>
-          <EventTitle>lol</EventTitle>
+          <EventTitle>Club Finest</EventTitle>
           <Row justifyContent="unset">
-            <P style={{ marginTop: "0" }} color="#2d97ac">
+            <P style={{ margin: "0" }} color="#2d97ac">
               E-Lounge Club
             </P>
             <ArrowRight />
           </Row>
-          <Row></Row>
-          <Row>
+          {/* <Row></Row> */}
+          <Row margin='.75rem 0 0 0' >
             <EventGenreTag tag="HipHop" />
             <EventGenreTag tag="RnB" />
             <EventGenreTag tag="Deutsch" />
           </Row>
-          <Row justifyContent="unset">
+          {/* <Row justifyContent="unset">
             <Pin />
             <P style={{ marginBottom: "0" }}>84478 Waldkraiburg</P>
-          </Row>
+          </Row> */}
         </EventInfoBox>
       </ResultContainer>
-      <Heart onClick={() => handleLike()} />
+      {/* <Heart onClick={() => handleLike()} /> */}
+      <Dots onClick={() => handleLike()} />
     </Box>
   );
 }
