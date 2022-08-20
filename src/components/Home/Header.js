@@ -9,11 +9,15 @@ import Wrapper from "../Global/Wrapper";
 import SearchDrawerHeader from "../Search/SearchDrawerHeader";
 import SearchDrawerInputBox from "../Search/SearchDrawerInputBox";
 import SearchDrawerSubmit from "../Search/SearchDrawerSubmit";
+import { motion } from "framer-motion";
+import SearchFilter from "../Search/SearchFilter";
+import RecentlySearched from "../Search/RecentlySearched";
 
 const Drawer = styled(DrawerUnstyled)`
   .MuiDrawer-paperAnchorBottom {
     height: 100vh;
     background: linear-gradient(#002727, #031a1a, #070808);
+    transition-delay: 1s;
   }
 `;
 
@@ -58,8 +62,29 @@ export default function Header({ data }) {
       <FaRegBell style={{ width: "1.5rem", height: "1.5rem", fill: "#fff" }} />
       <Drawer anchor="bottom" open={showSearchDrawer}>
         <Wrapper>
-          <SearchDrawerHeader />
-          <SearchDrawerInputBox />
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                translateY: "80px",
+                opacity: 0,
+              },
+              visible: {
+                translateY: "0px",
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: .1,
+                },
+              },
+            }}
+          >
+            <SearchDrawerHeader />
+            <SearchDrawerInputBox />
+            <SearchFilter/>
+            {/* <RecentlySearched/> */}
+          </motion.div>
           <SearchDrawerSubmit
             showSearchDrawer={showSearchDrawer}
             setShowSearchDrawer={setShowSearchDrawer}
