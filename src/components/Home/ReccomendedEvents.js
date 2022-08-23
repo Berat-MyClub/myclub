@@ -73,7 +73,7 @@ export default function ReccomendedEvents({
             <ResultContainer key={event.id}>
               <ResultEvent url={"/urbanfire.jpeg"} />
               <EventInfoBox>
-                <EventTitle>{event.title}</EventTitle>
+                <EventTitle>{event.title ? event.title : 'lol'}</EventTitle>
                 <Row justifyContent="unset">
                   <P style={{ margin: "0" }} color="#2d97ac">
                     E-Lounge Club
