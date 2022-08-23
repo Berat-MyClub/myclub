@@ -26,7 +26,7 @@ const Input = styled.input`
   }
 `;
 
-export default function SearchInput() {
+export default function SearchInput({onChange}) {
   return (
     <Box>
       <MdSearch
@@ -37,7 +37,7 @@ export default function SearchInput() {
           marginRight: ".5rem",
         }}
       />
-      <Input placeholder="Search" />
+      <Input onChange={onChange} placeholder="Search" />
     </Box>
   );
 }

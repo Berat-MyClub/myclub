@@ -12,6 +12,11 @@ import SearchDrawerSubmit from "../Search/SearchDrawerSubmit";
 import { motion } from "framer-motion";
 import SearchFilter from "../Search/SearchFilter";
 import RecentlySearched from "../Search/RecentlySearched";
+import { useEffect } from "react";
+import { db } from "../../../firebase/initFirebase";
+import { collection, doc, getDocs } from "firebase/firestore";
+import SearchInput from "../Search/SearchInput";
+import ReccomendedEvents from '../Home/ReccomendedEvents'
 
 const Drawer = styled(DrawerUnstyled)`
   .MuiDrawer-paperAnchorBottom {
@@ -37,8 +42,34 @@ const Box = styled.div`
   align-items: center;
 `;
 
-export default function Header({ data }) {
+const SearchBox = styled.div`
+  background-color: #1b3031;
+  padding: 1rem;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 7px;
+`;
+
+export default function Header() {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
+  const [events, setEvents] = useState([]);
+  const [eventMatch, setEventMatch] = useState([]);
+
+  const searchEvents = (text) => {
+    let matches = events.filter((event) => {
+      const regex = new RegExp(`${text}`);
+      return event.title.match(regex);
+    });
+    setEventMatch(matches);
+  };
+
+  useEffect(() => {
+    const getEvents = async () => {
+      const data = await getDocs(collection(db, "events"));
+      setEvents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getEvents();
+  }, []);
 
   return (
     <Box>
@@ -75,14 +106,25 @@ export default function Header({ data }) {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  delay: .1,
+                  delay: 0.1,
                 },
               },
             }}
           >
             <SearchDrawerHeader />
-            <SearchDrawerInputBox />
-            <SearchFilter/>
+            <SearchBox>
+              <h1 style={{ marginTop: "0" }}>Find your Event!</h1>
+              <SearchInput onChange={(e) => searchEvents(e.target.value)} />
+            </SearchBox>
+            <div>
+              {eventMatch ? (
+                eventMatch.map((match) => {
+                  return <ReccomendedEvents key={match.id} eventMatch={eventMatch}/>;
+                })
+              ) : (
+                <SearchFilter />
+              )}
+            </div>
             {/* <RecentlySearched/> */}
           </motion.div>
           <SearchDrawerSubmit

@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import P from "../Fonts/P";
 import Row from "../Global/Row";
-import { MdOutlineChevronRight as ArrowRightUnstyled, MdOutlineMoreHoriz as DotsUnstyled } from "react-icons/md";
+import {
+  MdOutlineChevronRight as ArrowRightUnstyled,
+  MdOutlineMoreHoriz as DotsUnstyled,
+} from "react-icons/md";
 import { FaRegHeart as HeartUnstyled } from "react-icons/fa";
 import EventGenreTag from "../Global/EventGenreTag";
 
@@ -58,33 +61,34 @@ export default function ReccomendedEvents({
   title,
   events,
   setEvents,
+  eventMatch,
   ...props
 }) {
+  console.log("eventMatch", eventMatch);
   return (
-    <Box>
-      <ResultContainer>
-        <ResultEvent url={"/urbanfire.jpeg"} />
-        <EventInfoBox>
-          <EventTitle>Club Finest</EventTitle>
-          <Row justifyContent="unset">
-            <P style={{ margin: "0" }} color="#2d97ac">
-              E-Lounge Club
-            </P>
-            <ArrowRight />
-          </Row>
-          {/* <Row></Row> */}
-          <Row margin='.75rem 0 0 0' >
-            <EventGenreTag tag="HipHop" />
-            <EventGenreTag tag="RnB" />
-            <EventGenreTag tag="Deutsch" />
-          </Row>
-          {/* <Row justifyContent="unset">
-            <Pin />
-            <P style={{ marginBottom: "0" }}>84478 Waldkraiburg</P>
-          </Row> */}
-        </EventInfoBox>
-      </ResultContainer>
-      {/* <Heart onClick={() => handleLike()} /> */}
+    <Box eventMatch={eventMatch}>
+      {eventMatch &&
+        eventMatch.map((event) => {
+          return (
+            <ResultContainer>
+              <ResultEvent url={"/urbanfire.jpeg"} />
+              <EventInfoBox>
+                <EventTitle>{event.title}</EventTitle>
+                <Row justifyContent="unset">
+                  <P style={{ margin: "0" }} color="#2d97ac">
+                    E-Lounge Club
+                  </P>
+                  <ArrowRight />
+                </Row>
+                <Row margin=".75rem 0 0 0">
+                  <EventGenreTag tag="HipHop" />
+                  <EventGenreTag tag="RnB" />
+                  <EventGenreTag tag="Deutsch" />
+                </Row>
+              </EventInfoBox>
+            </ResultContainer>
+          );
+        })}
       <Dots onClick={() => handleLike()} />
     </Box>
   );
