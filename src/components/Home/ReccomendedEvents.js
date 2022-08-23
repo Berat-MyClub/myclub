@@ -70,7 +70,7 @@ export default function ReccomendedEvents({
       {eventMatch &&
         eventMatch.map((event) => {
           return (
-            <ResultContainer>
+            <ResultContainer key={event.id}>
               <ResultEvent url={"/urbanfire.jpeg"} />
               <EventInfoBox>
                 <EventTitle>{event.title}</EventTitle>
