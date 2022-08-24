@@ -27,7 +27,7 @@ const MyClubLogo = styled(MyClubLogoUnstyled)`
 export default function Homescreen() {
 
   return (
-    <Wrapper>
+    <Wrapper padding='1.5rem 1rem 6rem'>
       <Header/>
       {/* <button onClick={() => signOut()}>Log Out</button> */}
       <h1>Your Next Event</h1>

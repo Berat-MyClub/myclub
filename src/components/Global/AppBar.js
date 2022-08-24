@@ -4,6 +4,7 @@ import {
   BsFillCalendarCheckFill as CalendarFilledUnstyled,
   BsHouseDoor as HouseUnstyled,
   BsHouseDoorFill as HouseFilledUnstyled,
+  BsPlusLg as PlusUnstyled,
 } from "react-icons/bs";
 import { useState } from "react";
 import PUnstyled from "../Fonts/P";
@@ -11,6 +12,7 @@ import {
   FaRegUserCircle as UserUnstyled,
   FaUserCircle as UserFilledUnstyled,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const P = styled(PUnstyled)`
   opacity: 0;
@@ -23,6 +25,13 @@ const P = styled(PUnstyled)`
         opacity: 1;
         transform: translateY(5px);
     `}
+`;
+
+const Plus = styled(PlusUnstyled)`
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: translateY(10px);
+  fill: #fff;
 `;
 
 const User = styled(UserUnstyled)`
@@ -84,7 +93,6 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 10px 10px 0 0; */
   justify-content: space-between;
 `;
 
@@ -93,6 +101,7 @@ export default function AppBar() {
 
   return (
     <Box>
+      <Link href={'/'}>
       <IconBox active={tab === "Home"} onClick={() => setTab("Home")}>
         {tab === "Home" ? (
           <HouseFilled active={tab === "Home"} />
@@ -103,6 +112,7 @@ export default function AppBar() {
           Home
         </P>
       </IconBox>
+      </Link>
       <IconBox active={tab === "Calendar"} onClick={() => setTab("Calendar")}>
         {tab === "Calendar" ? (
           <CalendarFilled active={tab === "Calendar"} />
@@ -113,6 +123,14 @@ export default function AppBar() {
           Calendar
         </P>
       </IconBox>
+      <Link href={'/uploadEvent'}>
+      <IconBox active={tab === "Upload"} onClick={() => setTab("Upload")}>
+        <Plus/>
+        <P color="#fff" active={tab === "Upload"} marginBottom="0">
+          Upload
+        </P>
+      </IconBox>
+      </Link>
       <IconBox active={tab === "Profile"} onClick={() => setTab("Profile")}>
         {tab === "Profile" ? (
           <UserFilled active={tab === "Profile"} />
