@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { MdOutlineAddAPhoto as CameraUnstyled } from "react-icons/md";
 import ImageUnstyled from "../../../icons/images-solid.svg";
+import { Button } from "@mui/material";
 
 const Image = styled(ImageUnstyled)`
   width: 2.5rem;
@@ -21,20 +22,41 @@ const Box = styled.div`
 `;
 
 const IconBox = styled.div`
-    padding-right: 1.25rem;
-    border-right: 3px solid #a6a6a6;
-    margin-right: 1.25rem;
-`
-
-
+  padding-right: 1.25rem;
+  border-right: 3px solid #a6a6a6;
+  margin-right: 1.25rem;
+`;
 
 export default function EventImage() {
   return (
-    <Box>
-      <IconBox>
-        <Image />
-      </IconBox>
-      <h2>Upload Photos and Videos</h2>
-    </Box>
+    <Button
+      sx={{
+        width: "100%",
+        backgroundColor: "#1b3031",
+        borderRadius: "7px",
+        minHeight: "17vh",
+        maxHeight: "17vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: "2rem",
+        "&:hover": {
+          backgroundColor: "#1b3031",
+        },
+      }}
+      variant="contained"
+      component="label"
+    >
+      Upload
+      <input hidden accept="image/*" multiple type="file" />
+    </Button>
   );
+}
+
+{
+  /* <input type="file" />
+<IconBox>
+  <Image />
+</IconBox>
+<h2>Upload Photos and Videos</h2> */
 }
