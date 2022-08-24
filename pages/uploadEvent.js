@@ -7,7 +7,7 @@ import Header from "../src/components/Upload/Header";
 import EventImage from "../src/components/Upload/EventImage";
 import InputField from "../src/components/Upload/InputField";
 
-export default function uploadEvent() {
+export default function UploadEvent() {
   const [newTitle, setNewTitle] = useState("");
   const [newCity, setNewCity] = useState("");
   const createEvent = async () => {
